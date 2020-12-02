@@ -1,6 +1,7 @@
 /* eslint-disable no-console */
 const lineReader = require('line-reader');
 const a = require('./a');
+const b = require('./b');
 
 function loadInput(cb) {
   const numbers = [];
@@ -12,9 +13,10 @@ function loadInput(cb) {
   });
 }
 
-function runA(numbers) {
-  const result = a.findNumberSums(numbers);
-  console.log('A:', result[0] * result[1]);
-}
+loadInput((numbers) => {
+  const aResult = a.findNumberSums(numbers);
+  console.log('A:', aResult[0] * aResult[1]);
 
-loadInput(runA);
+  const bResult = b.findNumberSums(numbers);
+  console.log('B:', bResult[0] * bResult[1] * bResult[2]);
+});
