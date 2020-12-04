@@ -1,6 +1,7 @@
 /* eslint-disable no-console */
 const lineReader = require('line-reader');
 const a = require('./a');
+const b = require('./b');
 const util = require('./util');
 
 function loadInput(cb) {
@@ -21,4 +22,12 @@ loadInput((passwords) => {
     }
   });
   console.log('A:', validCount);
+
+  validCount = 0;
+  passwords.forEach((password) => {
+    if (b.passwordValid(password)) {
+      validCount += 1;
+    }
+  });
+  console.log('B:', validCount);
 });
