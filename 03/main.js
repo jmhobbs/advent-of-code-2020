@@ -14,5 +14,15 @@ function loadInput(cb) {
 }
 
 loadInput((m) => {
-  console.log('A:', a.treesInSlope(m, 3, 1)[1]);
+  const treesA = a.treesInSlope(m, 3, 1);
+
+  console.log('A:', treesA);
+  console.log(
+    'B:',
+    treesA
+      * a.treesInSlope(m, 1, 1)
+      * a.treesInSlope(m, 5, 1)
+      * a.treesInSlope(m, 7, 1)
+      * a.treesInSlope(m, 1, 2),
+  );
 });
