@@ -14,4 +14,4 @@ test('2-9 c: ccccccccc', () => {
 
 test('2-9 c: abdef', () => {
   expect(a.passwordValid([2, 9, 'c', 'abdef'])).toBe(false);
-})
+});
