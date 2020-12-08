@@ -6,7 +6,7 @@ function loadInput(cb) {
   let lines = [];
   const passports = [];
   lineReader.eachLine('input.txt', (line, last) => {
-    if (line === "") {
+    if (line === '') {
       passports.push(new passport.Passport(lines));
       lines = [];
     } else {
@@ -21,6 +21,9 @@ function loadInput(cb) {
 }
 
 loadInput((passports) => {
-  const validCount = passports.map((p) => p.valid()).reduce((acc, val) => acc + ((val) ? 1 : 0));
-  console.log('A:', validCount)
+  const validACount = passports.map((p) => p.validA()).reduce((acc, val) => acc + (val ? 1 : 0));
+  console.log('A:', validACount);
+
+  const validBCount = passports.map((p) => p.validB()).reduce((acc, val) => acc + (val ? 1 : 0));
+  console.log('B:', validBCount);
 });
